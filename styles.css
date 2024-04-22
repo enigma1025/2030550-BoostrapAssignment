@@ -1,0 +1,116 @@
+* {
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgb(74, 68, 68);
+}
+
+.navbar-brand img {
+  width: 100px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card img {
+  flex-grow: 1;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  background: rgb(74, 68, 68);
+  padding: 20px 0;
+  text-align: center;
+}
+
+keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.row {
+  margin-bottom: 20px;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.navbar-nav .nav-item {
+  animation: slideInFromRight 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--animation-order));
+}
+
+/* Custom CSS for animation order */
+.navbar-nav .nav-item:nth-child(1) {
+  --animation-order: 1;
+}
+.navbar-nav .nav-item:nth-child(2) {
+  --animation-order: 2;
+}
+.navbar-nav .nav-item:nth-child(3) {
+  --animation-order: 3;
+}
+footer {
+  display: flex;
+}
+.social {
+  display: flex;
+  position: relative;
+  left: 300px;
+}
+.social img {
+  height: 40px;
+}
